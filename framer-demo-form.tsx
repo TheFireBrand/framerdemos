@@ -45,7 +45,7 @@ export default function Component() {
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">Submit</Button>
+        <Button className="w-full">Create Demo</Button>
       </CardFooter>
     </Card>
   )
@@ -62,3 +62,15 @@ export default function Component() {
 
 // "notificationMessage" should be a textarea with a character limit of 150.
 // "checkoutLink" should ALSO be added to the last propertyControl description field, if possible, so users can click through to the checkout page for each component.
+
+// The "Create Demo" button should initiate the text replacement and save the resulting tsx component demo in the ./demos directory.
+// The "componentName" can be used as a prefix along with a numeric timestamp (DDMMYYYYHHMMSS) to ensure each demo file is unique: componentName_12092024174325.tsx
+// The information contained in the filename will be used to inform the viewer component about the source it should load.
+// The filename should be split and an import link, using the same format as the one pasted into the baseDomain field, should be created,so "componentName_12092024174325" would become:
+// import componentName from "https://componentName_12092024174325"
+
+
+
+// I will need a viewer component that will be based in Framer, but made available to users along with their demo import code.
+// This viewer component will require the following features:
+//

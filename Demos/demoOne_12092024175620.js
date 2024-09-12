@@ -136,4 +136,5 @@ FLicensing.displayName = "CanvasScrollAnimation_1_2"
 
 
 
-import demoOne from "https://framer.com/m/ImageSequenceScrollAnimationPreloader-qntg.js@T2lEZWAHkuG0xe69fyP4"
+
+

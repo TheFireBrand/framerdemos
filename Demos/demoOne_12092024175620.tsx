@@ -1,23 +1,21 @@
-// This is an example of a manually completed demo, using actual data from one of my components, to simulate what the demos should look like after processing:
-
 // FramerBlack
 // https://documentation.framer.ai/framer-directives
 // CanvasScrollAnimation_1_2 V.1.2
 
 import { Frame, addPropertyControls, ControlType } from "framer"
 import React, { useEffect, useState } from "react"
-// import { RogueComponent } from "https://framer.com/m/FramerPdfViewer-OBF-7Ony.js@AJuN2eP63GIRChoYFA45"
 import ImageSequenceScrollAnimationPreloader, { CanvasScrollAnimation_1_2 } from "https://framer.com/m/ImageSequenceScrollAnimationPreloader-qntg.js"
 
-const copyPropertyControls = (sourceComponent, targetComponent) => {
+const copyPropertyControls = (sourceComponent: any, targetComponent: any) => {
     if (sourceComponent.propertyControls) {
         addPropertyControls(targetComponent, sourceComponent.propertyControls)
     }
 }
-// "https://bright-deliberate-181654.framer.app/" should be added to the approved domain list // I don't know exactly how the code for that will look.
+
+// "https://bright-deliberate-181654.framer.app/" should be added to the approved domain list
 const encodedDomains =
     "LmZyYW1lci5hcHA=.LmZyYW1lcnVzZXJjb250ZW50LmNvbQ==.LmZyYW1lcmNhbnZhcy5jb20="
-const decodeBase64Domains = (encodedString) => {
+const decodeBase64Domains = (encodedString: string): string[] => {
     return encodedString.split(".").map((domain) => atob(domain))
 }
 
@@ -29,7 +27,13 @@ const decodeBase64Domains = (encodedString) => {
  * @framerSupportedLayoutHeight any-prefer-fixed
  */
 
-function FLicensing(props) {
+interface FLicensingProps {
+    isLicensingEnabled: boolean;
+    onToggleLicensing: () => void;
+    [key: string]: any;
+}
+
+function FLicensing(props: FLicensingProps) {
     const [isValid, setIsValid] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
     const [currentDomain, setCurrentDomain] = useState("")
@@ -73,12 +77,11 @@ function FLicensing(props) {
                     top: "10%",
                     justifyContent: "center",
                     alignContent: "center",
-                    zIndex: "99999",
+                    zIndex: 99999,
                 }}
             >
                 <div
                     style={{
-                        // Styling for popup
                         color: "#888",
                         fontSize: "0.65rem",
                         textAlign: "center",
@@ -99,8 +102,8 @@ function FLicensing(props) {
                         style={{ color: "#ffffff", textDecoration: "none" }}
                     >
                         $30 using crypto
-                    </a> {" "}
-                    </div>
+                    </a>{" "}
+                </div>
             </Frame>
         )
     }
@@ -109,34 +112,13 @@ function FLicensing(props) {
             <CanvasScrollAnimation_1_2 {...props} />
         </div>
     )
-
-    return (
-        <div
-            style={{
-                color: "white",
-                fontSize: "0.75rem",
-                textAlign: "center",
-                maxWidth: "450px",
-                userSelect: "none",
-                alignContent: "center",
-                justifyContent: "center",
-                paddingTop: "45%",
-            }}
-        >
-            Loading...
-        </div>
-    )
 }
+
 FLicensing.defaultProps = {
     isLicensingEnabled: true,
     onToggleLicensing: () => {},
 }
+
 copyPropertyControls(CanvasScrollAnimation_1_2, FLicensing)
 export default FLicensing
 FLicensing.displayName = "CanvasScrollAnimation_1_2"
-
-
-
-
-
-

@@ -5,7 +5,7 @@ import { Label } from "./ui/label"
 
 export default function Component() {
   return (
-    <Card className="w-full max-w-2xl mx-auto">
+    <Card className="max-w-2xl mx-auto w-full">
       <CardHeader>
         <CardTitle>Framer Component Demo Information</CardTitle>
         <CardDescription>Enter the details for creating a demo of your Framer component.</CardDescription>
@@ -50,3 +50,15 @@ export default function Component() {
     </Card>
   )
 }
+
+
+// Data captured on this page will be used to populate variable text replacements in the rogueLicenseTemplate.tsx
+// baseDomain should only accept *.framer.app urls
+// "authorName" should be added to a comment at the top, followed by "documentationLink" commented in the next line, then "componentName" and "versionNumber"
+// The format to expect in this field will be the copied import link of Framer components and appear as follows:
+// import LicesingAutomation_Igor from "https://framer.com/m/LicesingAutomation-Igor-7gBC.js@ks25j8Cwjov7ukP1q1ko"
+// The entire import link will be added to the demo file which is based on rogueLicenseTemplate.tsx, with relative content replacements being applied.
+// The component specified in the pasted import link should replace ${importedComponentName}
+
+// "notificationMessage" should be a textarea with a character limit of 150.
+// "checkoutLink" should ALSO be added to the last propertyControl description field, if possible, so users can click through to the checkout page for each component.

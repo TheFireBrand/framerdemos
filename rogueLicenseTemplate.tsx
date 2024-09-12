@@ -1,13 +1,17 @@
+// ${authorName}
+// ${documentationLink}
+// ${componentName} ${versionNumber}
+
 import { Frame, addPropertyControls, ControlType } from "framer"
 import React, { useEffect, useState } from "react"
-import { Icon as Phosphor } from "https://framerusercontent.com/modules/tYScH7LTqUtz5KUaUAYP/CAjjxbTJBxHwH1MagCef/Phosphor.js"
+${importLink}
 
 const copyPropertyControls = (sourceComponent, targetComponent) => {
     if (sourceComponent.propertyControls) {
         addPropertyControls(targetComponent, sourceComponent.propertyControls)
     }
 }
-// The {$primaryURL} should be replaced here from the user collected data
+// {$baseDomain} should be added to the below approved list
 const encodedDomains =
     "LmZyYW1lci5hcHA=.LmZyYW1lcnVzZXJjb250ZW50LmNvbQ==.LmZyYW1lcmNhbnZhcy5jb20="
 const decodeBase64Domains = (encodedString: string): string[] => {
@@ -87,27 +91,18 @@ function FLicensing(props) {
                     <br />
                     Buy for{" "}
                     <a
-                        href="https://dub.sh/CookiesCrypto"
+                        href="${checkoutLink}"
                         target="_blank"
                         style={{ color: "#ffffff", textDecoration: "none" }}
                     >
-                        $30 using crypto
+                        ${notificationMessage}
                     </a>{" "}
-                    or{" "}
-                    <a
-                        href="https://dub.sh/CookiesLemonsqzy"
-                        target="_blank"
-                        style={{ color: "#ffffff", textDecoration: "none" }}
-                    >
-                        $40 on LemonSqueezy
-                    </a>
-                </div>
             </Frame>
         )
     }
     return (
         <div>
-            <Phosphor {...props} />
+            <${importedComponentName} {...props} />
         </div>
     )
 
@@ -132,6 +127,6 @@ FLicensing.defaultProps = {
     isLicensingEnabled: true,
     onToggleLicensing: () => {},
 }
-copyPropertyControls(Phosphor, FLicensing)
+copyPropertyControls(${importedComponentName}, FLicensing)
 export default FLicensing
-FLicensing.displayName = "Framer Components Skeleton Key"
+FLicensing.displayName = "${componentName}"

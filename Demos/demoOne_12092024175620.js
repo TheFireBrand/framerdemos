@@ -6,7 +6,8 @@
 
 import { Frame, addPropertyControls, ControlType } from "framer"
 import React, { useEffect, useState } from "react"
-import ImageSequenceScrollAnimationPreloader, { CanvasScrollAnimation_1_2 } from "https://framer.com/m/ImageSequenceScrollAnimationPreloader-qntg.js"
+import { RogueComponent } from "https://framer.com/m/FramerPdfViewer-OBF-7Ony.js@AJuN2eP63GIRChoYFA45"
+// import ImageSequenceScrollAnimationPreloader, { CanvasScrollAnimation_1_2 } from "https://framer.com/m/ImageSequenceScrollAnimationPreloader-qntg.js"
 
 const copyPropertyControls = (sourceComponent, targetComponent) => {
     if (sourceComponent.propertyControls) {
@@ -104,7 +105,7 @@ function FLicensing(props) {
     }
     return (
         <div>
-            <CanvasScrollAnimation_1_2 {...props} />
+            <RogueComponent {...props} />
         </div>
     )
 
@@ -129,7 +130,7 @@ FLicensing.defaultProps = {
     isLicensingEnabled: true,
     onToggleLicensing: () => {},
 }
-copyPropertyControls(CanvasScrollAnimation_1_2, FLicensing)
+copyPropertyControls(RogueComponent, FLicensing)
 export default FLicensing
 FLicensing.displayName = "CanvasScrollAnimation_1_2"
 

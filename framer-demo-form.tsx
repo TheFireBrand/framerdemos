@@ -56,8 +56,9 @@ export default function Component() {
 // baseDomain should only accept *.framer.app urls
 // "authorName" should be added to a comment at the top, followed by "documentationLink" commented in the next line, then "componentName" and "versionNumber"
 // The format to expect in this field will be the copied import link of Framer components and appear as follows:
-// import LicesingAutomation_Igor from "https://framer.com/m/LicesingAutomation-Igor-7gBC.js@ks25j8Cwjov7ukP1q1ko"
-// The entire import link will be added to the demo file which is based on rogueLicenseTemplate.tsx, with relative content replacements being applied.
+// import ImageSequenceScrollAnimationPreloader, { CanvasScrollAnimation_1_2 } from "https://framer.com/m/ImageSequenceScrollAnimationPreloader-qntg.js@T2lEZWAHkuG0xe69fyP4"
+// The suffix following ".js" should be removed. Everything from @ until the closing quotation marks.
+// The cleaned import link should be added to the demo file which is based on rogueLicenseTemplate.tsx, with relative content replacements being applied.
 // The component specified in the pasted import link should replace ${importedComponentName}
 
 // "notificationMessage" should be a textarea with a character limit of 150.

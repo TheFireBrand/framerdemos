@@ -52,26 +52,3 @@ export default function Component() {
 }
 
 
-// Data captured on this page will be used to populate variable text replacements in the rogueLicenseTemplate.tsx
-// baseDomain should only accept *.framer.app urls
-// "authorName" should be added to a comment at the top, followed by "documentationLink" commented in the next line, then "componentName" and "versionNumber"
-// The format to expect in this field will be the copied import link of Framer components and appear as follows:
-// import ImageSequenceScrollAnimationPreloader, { CanvasScrollAnimation_1_2 } from "https://framer.com/m/ImageSequenceScrollAnimationPreloader-qntg.js@T2lEZWAHkuG0xe69fyP4"
-// The suffix following ".js" should be removed. Everything from @ until the closing quotation marks.
-// The cleaned import link should be added to the demo file which is based on rogueLicenseTemplate.tsx, with relative content replacements being applied.
-// The component specified in the pasted import link should replace ${importedComponentName}
-
-// "notificationMessage" should be a textarea with a character limit of 150.
-// "checkoutLink" should ALSO be added to the last propertyControl description field, if possible, so users can click through to the checkout page for each component.
-
-// The "Create Demo" button should initiate the text replacement and save the resulting tsx component demo in the ./demos directory.
-// The "componentName" can be used as a prefix along with a numeric timestamp (DDMMYYYYHHMMSS) to ensure each demo file is unique: componentName_12092024174325.tsx
-// The information contained in the filename will be used to inform the viewer component about the source it should load.
-// The filename should be split and an import link, using the same format as the one pasted into the baseDomain field, should be created,so "componentName_12092024174325" would become:
-// import componentName from "https://componentName_12092024174325"
-
-
-
-// I will need a viewer component that will be based in Framer, but made available to users along with their demo import code.
-// This viewer component will require the following features:
-//

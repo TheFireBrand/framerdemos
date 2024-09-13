@@ -4,13 +4,14 @@
 
 import { Frame, addPropertyControls, ControlType } from "framer"
 import React, { useEffect, useState } from "react"
-${importLink}
+// The actual import statement will be placed here
 
 const copyPropertyControls = (sourceComponent, targetComponent) => {
     if (sourceComponent.propertyControls) {
         addPropertyControls(targetComponent, sourceComponent.propertyControls)
     }
 }
+
 // {$baseDomain} should be added to the below approved list
 const encodedDomains =
     "LmZyYW1lci5hcHA=.LmZyYW1lcnVzZXJjb250ZW50LmNvbQ==.LmZyYW1lcmNhbnZhcy5jb20="
@@ -97,36 +98,29 @@ function FLicensing(props) {
                     >
                         ${notificationMessage}
                     </a>{" "}
+                </div>
             </Frame>
         )
     }
-    return (
-        <div>
-            <${importedComponentName} {...props} />
-        </div>
-    )
+
+    // Use a dynamic import for the component
+    const ImportedComponent = React.lazy(() => import("${importLink}"))
 
     return (
-        <div
-            style={{
-                color: "white",
-                fontSize: "0.75rem",
-                textAlign: "center",
-                maxWidth: "450px",
-                userSelect: "none",
-                alignContent: "center",
-                justifyContent: "center",
-                paddingTop: "45%",
-            }}
-        >
-            Loading...
+        <div>
+            <React.Suspense fallback={<div>Loading...</div>}>
+                <ImportedComponent {...props} />
+            </React.Suspense>
         </div>
     )
 }
+
 FLicensing.defaultProps = {
     isLicensingEnabled: true,
     onToggleLicensing: () => {},
 }
-copyPropertyControls(${importedComponentName}, FLicensing)
+
+copyPropertyControls(ImportedComponent, FLicensing);
+
 export default FLicensing
 FLicensing.displayName = "${componentName}"
